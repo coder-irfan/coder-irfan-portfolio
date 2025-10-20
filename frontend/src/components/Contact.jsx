@@ -21,7 +21,7 @@ function Contact({ getDirection }) {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contact",
+        "https://coder-irfan-portfolio-backend.onrender.com/api/contact",
         {
           ...data,
         },
