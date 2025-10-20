@@ -1,0 +1,8 @@
+{
+  "success": "¡Mensaje enviado con éxito!",
+  "error": "Algo salió mal, inténtalo de nuevo.",
+  "invalidInputs": "¡Campos de entrada no válidos!",
+  "invalidEmail": "Por favor, introduce un correo electrónico válido.",
+  "missingFields": "Por favor, completa todos los campos obligatorios.",
+  "rateLimit": "Demasiadas solicitudes. ¡Por favor, inténtalo más tarde!"
+}

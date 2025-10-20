@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Vazirmatn", sans-serif;
+  overflow-x: hidden;
+  background-color: #131314;
+  color: #f7f7f7;
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
+.hover-link {
+  @apply relative after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[0.185rem] after:bg-colors-matisse after:transition-all
+    after:duration-500 hover:after:left-0 hover:after:w-full;
+}
+
+.button {
+  @apply flex items-center gap-3 border-2 border-colors-matisse rounded-lg px-5 pt-2 pb-2.5 shadow-[0_0_0.4rem] shadow-colors-matisse 
+  hover:shadow-[0_0_1.2rem] hover:shadow-colors-matisse transition-all duration-300;
+}
+
+.input {
+  @apply py-2 lg:py-2.5 px-2 md:px-4 rounded-lg text-colors-textSecondary text-sm sm:text-base border-[0.125rem] border-colors-matisse
+   focus:outline-none focus:shadow-[0_0_0.6rem] focus:shadow-colors-matisse w-full bg-colors-lightedBalticSea placeholder:text-xs md:placeholder:text-sm
+   transition-shadow duration-300;
+}
+
+.error {
+  @apply text-xs sm:text-sm font-medium text-colors-red pl-2 pt-1;
+}
+
+.media-link {
+  @apply p-2 md:p-2.5 border-2 border-colors-matisse bg-colors-balticSea/100 hover:bg-colors-matisse rounded-full transition-all duration-300;
+}
