@@ -67,7 +67,7 @@ function Contact({ getDirection }) {
       <section
         dir={getDirection()}
         id="contact"
-        className="relative px-4 sm:px-6 md:px-8 lg:px-16 pt-10 pb-16 md:py-14 md:pb-24 lg:py-24 max-w-[85rem] 2xl:max-w-[88rem] mx-auto"
+        className="relative w-full px-4 sm:px-6 md:px-8 lg:px-16 pt-10 pb-16 md:py-14 md:pb-24 lg:py-24 max-w-[85rem] 2xl:max-w-[88rem] mx-auto"
       >
         <div className="absolute top-10 left-0 lg:left-[-5rem] bg-colors-darkMatisse w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>
         <div className="absolute bottom-10 right-0 lg:right-[-5rem] bg-colors-darkMatisse w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>
@@ -88,8 +88,8 @@ function Contact({ getDirection }) {
             />
           </div>
 
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
-            <div className="max-w-4xl">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 lg:gap-8">
+            <div className="max-w-7xl">
               <form
                 className="flex flex-col gap-4 lg:gap-5"
                 onSubmit={handleSubmit(onSubmit, onError)}
@@ -226,7 +226,7 @@ function Contact({ getDirection }) {
               <img
                 src="images/contact.svg"
                 alt="two man agreement"
-                className="w-64 mx-auto sm:w-[24.125rem] md:w-[25rem] lg:w-[500px] xl:w-[600px] object-cover"
+                className="w-64 mx-auto sm:w-[24.125rem] md:w-[25rem] lg:w-[500px] xl:w-[550px] object-cover"
               />
             </div>
           </div>
