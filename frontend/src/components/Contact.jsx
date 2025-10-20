@@ -88,8 +88,8 @@ function Contact({ getDirection }) {
             />
           </div>
 
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 lg:gap-8">
-            <div className="max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
+            <div className="max-w-4xl order-1 lg:-order-1">
               <form
                 className="flex flex-col gap-4 lg:gap-5"
                 onSubmit={handleSubmit(onSubmit, onError)}
