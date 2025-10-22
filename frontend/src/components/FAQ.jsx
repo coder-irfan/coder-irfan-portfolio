@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaTimes } from "react-icons/fa";
@@ -6,37 +6,40 @@ import { FaPlus, FaTimes } from "react-icons/fa";
 function FAQ({ getDirection }) {
   const { t } = useTranslation();
 
-  const faqs = [
-    {
-      id: "1",
-      question: t("FAQ1Title"),
-      answer: t("FAQ1Description"),
-    },
+  const faqs = React.useMemo(
+    () => [
+      {
+        id: "1",
+        question: t("FAQ1Title"),
+        answer: t("FAQ1Description"),
+      },
 
-    {
-      id: "2",
-      question: t("FAQ2Title"),
-      answer: t("FAQ2Description"),
-    },
+      {
+        id: "2",
+        question: t("FAQ2Title"),
+        answer: t("FAQ2Description"),
+      },
 
-    {
-      id: "3",
-      question: t("FAQ3Title"),
-      answer: t("FAQ3Description"),
-    },
+      {
+        id: "3",
+        question: t("FAQ3Title"),
+        answer: t("FAQ3Description"),
+      },
 
-    {
-      id: "4",
-      question: t("FAQ4Title"),
-      answer: t("FAQ4Description"),
-    },
+      {
+        id: "4",
+        question: t("FAQ4Title"),
+        answer: t("FAQ4Description"),
+      },
 
-    {
-      id: "5",
-      question: t("FAQ5Title"),
-      answer: t("FAQ5Description"),
-    },
-  ];
+      {
+        id: "5",
+        question: t("FAQ5Title"),
+        answer: t("FAQ5Description"),
+      },
+    ],
+    [t]
+  );
 
   const [isOpen, setIsOpen] = useState(0);
   const toggleFaq = (index) => {
@@ -90,9 +93,9 @@ function FAQ({ getDirection }) {
                   {isOpened && (
                     <motion.div
                       key="answer"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
+                      initial={{ opacity: 0, maxHeight: 0 }}
+                      animate={{ opacity: 1, maxHeight: 500 }}
+                      exit={{ opacity: 0, maxHeight: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       <p className="text-[0.8rem] sm:text-[0.95rem] md:text-base pt-3 lg:pt-5">
