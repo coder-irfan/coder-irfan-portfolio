@@ -1,12 +1,11 @@
 import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaTimes } from "react-icons/fa";
 
 function FAQ({ getDirection }) {
   const { t } = useTranslation();
 
-  const faqs = React.useMemo(
+  const faqs = useMemo(
     () => [
       {
         id: "1",
@@ -75,35 +74,27 @@ function FAQ({ getDirection }) {
                 onClick={() => toggleFaq(index)}
               >
                 <div className="flex items-center gap-3 lg:ap-4">
-                  <motion.div
-                    initial={false}
-                    animate={{ rotate: isOpened ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+                  <span
+                    className={`md:text-lg xl:text-xl text-colors-danube transition-transform duration-200 ${
+                      isOpened ? "rotate-45" : "rotate-0"
+                    }`}
                   >
-                    <span className="md:text-lg xl:text-xl text-colors-danube">
-                      {isOpened ? <FaTimes /> : <FaPlus />}
-                    </span>
-                  </motion.div>
+                    {isOpened ? <FaTimes /> : <FaPlus />}
+                  </span>
                   <h3 className="text-colors-textSecondary font-medium text-sm sm:text-base md:text-lg xl:text-xl">
                     {faq.question}
                   </h3>
                 </div>
 
-                <AnimatePresence initial={false}>
-                  {isOpened && (
-                    <motion.div
-                      key="answer"
-                      initial={{ opacity: 0, maxHeight: 0 }}
-                      animate={{ opacity: 1, maxHeight: 500 }}
-                      exit={{ opacity: 0, maxHeight: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      <p className="text-[0.8rem] sm:text-[0.95rem] md:text-base pt-3 lg:pt-5">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpened ? "max-h-96 mt-3" : "max-h-0 mt-0"
+                  }`}
+                >
+                  <p className="text-[0.8rem] sm:text-[0.95rem] md:text-base">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             );
           })}
