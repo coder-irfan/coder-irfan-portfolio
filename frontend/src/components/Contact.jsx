@@ -67,7 +67,7 @@ function Contact({ getDirection }) {
       <section
         dir={getDirection()}
         id="contact"
-        className="relative w-full px-4 sm:px-6 md:px-8 lg:px-16 pt-10 pb-16 md:py-14 md:pb-24 lg:py-24 max-w-[85rem] 2xl:max-w-[88rem] mx-auto"
+        className="relative w-full px-4 sm:px-6 md:px-8 lg:px-16 pt-10 pb-24 md:py-14 md:pb-28 lg:py-32 max-w-[85rem] 2xl:max-w-[88rem] mx-auto"
       >
         <div className="absolute top-10 left-0 lg:left-[-5rem] bg-colors-darkMatisse w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>
         <div className="absolute bottom-10 right-0 lg:right-[-5rem] bg-colors-darkMatisse w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>
